@@ -1,0 +1,15 @@
+local commonFuncs= {}
+function commonFuncs:GetTabLength(t)
+    local i = 0
+    for k, v in pairs(t) do
+        i = i + 1
+    end
+    return i
+end
+local id = 0;
+function commonFuncs:GenerateID()
+    id=id+1;
+    return id;
+end
+
+return commonFuncs;

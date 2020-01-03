@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackSystem_Slua", "KnapsackSystem_Slua.csproj", "{35CF23E6-3822-83BF-4C5F-523F3366A634}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackSystem_Slua.Plugins", "KnapsackSystem_Slua.Plugins.csproj", "{97E50D71-1524-F250-64EE-40395F8BC1A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackSystem_Slua.Editor", "KnapsackSystem_Slua.Editor.csproj", "{9CB983A3-AA12-CD2C-DAA8-77B0846A10F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackSystem_Slua.Editor.Plugins", "KnapsackSystem_Slua.Editor.Plugins.csproj", "{B5F35D0D-2670-A553-793E-80EF60FCA85C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35CF23E6-3822-83BF-4C5F-523F3366A634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CF23E6-3822-83BF-4C5F-523F3366A634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CF23E6-3822-83BF-4C5F-523F3366A634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CF23E6-3822-83BF-4C5F-523F3366A634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97E50D71-1524-F250-64EE-40395F8BC1A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E50D71-1524-F250-64EE-40395F8BC1A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E50D71-1524-F250-64EE-40395F8BC1A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E50D71-1524-F250-64EE-40395F8BC1A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CB983A3-AA12-CD2C-DAA8-77B0846A10F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CB983A3-AA12-CD2C-DAA8-77B0846A10F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CB983A3-AA12-CD2C-DAA8-77B0846A10F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CB983A3-AA12-CD2C-DAA8-77B0846A10F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5F35D0D-2670-A553-793E-80EF60FCA85C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5F35D0D-2670-A553-793E-80EF60FCA85C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5F35D0D-2670-A553-793E-80EF60FCA85C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5F35D0D-2670-A553-793E-80EF60FCA85C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

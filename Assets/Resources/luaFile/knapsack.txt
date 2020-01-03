@@ -1,0 +1,98 @@
+﻿local equipmentsInfo = require 'luaFile.infos.equipmentsInfo';
+local itemsInfo = require 'luaFile.infos.itemsInfo';
+local fragmentsInfo = require 'luaFile.infos.fragmentsInfo';
+local ownEquipment = require 'luaFile.dataModels.ownEquipment';
+local commonFuncs= require 'luaFile.commonFuncs.commonFuncs';
+local equipmentDetailPanel = require 'luaFile.ui.equipmentDetailPanel';
+local grid = require 'luaFile.ui.grid';
+local getSomethingPanel = require 'luaFile.ui.getSomethingPanel';
+import "UnityEngine"
+
+
+local canvasTrans = nil;
+local knapsackPanelGo = nil;
+local showListTrans = nil;
+
+function OnGetRandomBtnClick()
+
+end
+
+function OnGetOneEquipmentBtnClick()
+    local gridType = 1 ;
+    local instanceID = CreateGridData(gridType);
+    if(showListTrans == nil)then
+        showListTrans = knapsackPanelGo.transform:Find("showPlace/showList");
+    end
+    local id = 0; --暂时无效，因为使用instanceID查找武器
+    local gridInstance = grid:New(showListTrans);
+    gridInstance:Show(gridType,id,instanceID);
+    getSomethingPanelInstance:Show(gridType,id,instanceID);
+end
+
+function OnGetOneItemBtnClick()
+
+end
+
+function OnGetOneFragmentBtnClick()
+
+end
+
+
+
+function CreateGridData(gridType)
+    if(gridType == 1)then
+        --EquipmentData的定义在ownEquipment.txt文件中.
+        local equipmentID = math.random(1,commonFuncs:GetTabLength(equipmentsInfo));
+        local instanceID = commonFuncs:GenerateID();
+        local equipmentData = EquipmentData:New(equipmentID,instanceID);
+        ownEquipment:Add(equipmentData);
+        return equipmentData.instanceID;
+    elseif (gridType == 2) then
+
+    elseif (gridType == 3) then
+    end
+end
+
+function main()
+    local tab = {}
+    function tab:Start()
+        canvasTrans = GameObject.Find("Canvas").transform;
+
+        knapsackPanelGo =GameObject.Instantiate(Resources.Load("Prefabs/KnapsackPanel"),canvasTrans);
+        local knapsackPanelTrans = knapsackPanelGo.transform;
+        local getRandomBtn = knapsackPanelTrans:Find("testBtns/getRandomOneBtn"):GetComponent(UI.Button);
+        local getOneEquipmentBtn = knapsackPanelTrans:Find("testBtns/getOneEquipmentBtn"):GetComponent(UI.Button);
+        local getOneItemBtn = knapsackPanelTrans:Find("testBtns/getOneItemBtn"):GetComponent(UI.Button);
+        local getOneFragmentBtn = knapsackPanelTrans:Find("testBtns/getOneFragmentBtn"):GetComponent(UI.Button);
+        getRandomBtn.onClick:AddListener(OnGetRandomBtnClick);
+        getOneEquipmentBtn.onClick:AddListener(OnGetOneEquipmentBtnClick);
+        getOneItemBtn.onClick:AddListener(OnGetOneItemBtnClick);
+        getOneFragmentBtn.onClick:AddListener(OnGetOneFragmentBtnClick);
+        getSomethingPanelInstance = getSomethingPanel:New(canvasTrans);
+    end
+
+    function tab:Update()
+    end
+
+    function tab:OnEnable()
+
+    end
+
+    function tab:OnDisable()
+
+    end
+    return tab;
+end
+
+
+
+
+
+
+
+
+
+
+
+
+

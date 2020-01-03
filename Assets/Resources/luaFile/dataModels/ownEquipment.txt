@@ -1,0 +1,31 @@
+local commonFuncs= require 'luaFile.commonFuncs.commonFuncs';
+
+
+local ownEquipment = {}
+
+--装备的数据模型，只用2个字段：id用来索引equipmentsInfo.lua里的静态信息。而instanceID是这个物体的唯一id，关联这个游戏物体以及对应的数据
+EquipmentData = {equipmentID = 0;instanceID = 0};
+function EquipmentData:New(equipmentID,instanceID)
+    local o = {};
+    self.__index = self;
+    setmetatable(o,self);
+    o.equipmentID = equipmentID or 0;
+    o.instanceID = instanceID or 0;
+    return o;
+end
+
+function ownEquipment:Add(equipmentData)
+    local length = commonFuncs:GetTabLength(self);
+    self[length] = equipmentData;
+    print("添加数据项成功");
+end
+
+function ownEquipment:GetEquipmentDataByInstanceID(instanceID)
+    for k,v in pairs(self)do
+        if(v.instanceID == instanceID) then
+            return v;
+        end
+    end
+end
+
+return ownEquipment;

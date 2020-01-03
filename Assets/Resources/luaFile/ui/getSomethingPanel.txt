@@ -1,0 +1,28 @@
+local grid = require 'luaFile.ui.grid';
+local getSomethingPanel = {getSomethingPanelGo = nil,parent = nil,closeBtn = nil,showListTrans = nil}
+    function getSomethingPanel:New(parent)
+        local o = {};
+        self.__index = self;
+        setmetatable(o,self);
+        o.parent = parent;
+        o.getSomethingPanelGo =GameObject.Instantiate(Resources.Load("Prefabs/GetSomethingPanel"), o.parent);
+        o.showListTrans = o.getSomethingPanelGo.transform:Find("GetSometingPanel/showList");
+        o.closeBtn = o.getSomethingPanelGo.transform:Find("ClickToCloseBgBtn"):GetComponent(UI.Button);
+        o.closeBtn.onClick:AddListener(function()
+            o.getSomethingPanelGo:SetActive(false);
+            for t in Slua.iter(o.showListTrans) do
+                GameObject.Destroy(t.gameObject);
+            end
+        end);
+        o.getSomethingPanelGo:SetActive(false);
+        return o;
+    end
+
+    function getSomethingPanel:Show(gridType,id,instanceID)
+        self.getSomethingPanelGo:SetActive(true);
+        self.getSomethingPanelGo.transform:SetAsLastSibling();
+        local gridInstance = grid:New(self.showListTrans);
+        gridInstance:Show(gridType,id,instanceID);
+    end
+
+return getSomethingPanel;

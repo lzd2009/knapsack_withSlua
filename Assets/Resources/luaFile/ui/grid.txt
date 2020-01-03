@@ -1,0 +1,55 @@
+local ownEquipment = require 'luaFile.dataModels.ownEquipment';
+local equipmentDetailPanel = require 'luaFile.ui.equipmentDetailPanel';
+local equipmentsInfo = require 'luaFile.infos.equipmentsInfo';
+
+local grid = {gridGoPrefab = nil,gridGoInstance = nil,parent = nil,gridBtn = nil,image = nil,count_item = nil,count_fragment = nil}
+    function grid:New(parent)
+        local o =  {};
+        self.__index = self;
+        setmetatable(o,self);
+        o.parent = parent;
+        o.gridGoPrefab = Resources.Load("Prefabs/grid");
+        o.gridGoInstance = GameObject.Instantiate(o.gridGoPrefab,parent);
+        o.gridBtn = o.gridGoInstance.transform:Find("bg"):GetComponent(UI.Button);
+        o.gridBtn.onClick:AddListener(function()
+
+        end);
+        o.image = o.gridGoInstance.transform:Find("image"):GetComponent(UI.Image);
+        o.count_item = o.gridGoInstance.transform:Find("count_item"):GetComponent(UI.Text);
+        o.count_fragment = o.gridGoInstance.transform:Find("count_fragment"):GetComponent(UI.Text);
+        return o;
+    end
+
+    function grid:Show(gridType,id,instanceID)
+        if(gridType == 1)then
+            local equipmentData = ownEquipment:GetEquipmentDataByInstanceID(instanceID);
+            local sprite = LuaFileManager.LoadSprite("sprites/equipment/"..equipmentData.equipmentID);
+            self.image.sprite =sprite;
+            self:SwitchGridColorByRarity(self.gridBtn:GetComponent(UI.Image), equipmentsInfo[equipmentData.equipmentID]["rarity"]);
+            self.count_item.gameObject:SetActive(false);
+            self.count_fragment.gameObject:SetActive(false);
+            self.gridBtn.onClick:AddListener(function ()
+                if(equipmentDetailPanelInstance == nil)then
+                   equipmentDetailPanelInstance = equipmentDetailPanel:New();
+                end
+                equipmentDetailPanelInstance:Show(equipmentData);
+            end)
+        elseif (gridType == 2) then
+
+        elseif (gridType == 3) then
+
+        end
+    end
+
+    function grid:SwitchGridColorByRarity(image,rarity)
+        if(rarity == "Common") then
+            image.color = Color.gray;
+            elseif rarity == "Scarce" then
+            image.color = Color.green;
+        elseif rarity == "Legend" then
+            image.color = Color.yellow;
+        end
+    end
+
+
+return grid;

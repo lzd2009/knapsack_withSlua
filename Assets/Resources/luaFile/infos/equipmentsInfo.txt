@@ -1,0 +1,115 @@
+
+equipmentsInfo = {
+    {
+        equipmentID = 1,
+        name = "锋利小刀",
+     description = "一把随处可见的普通小刀",
+     part = "Weapon",
+     rarity = "Common",
+     attack = 100,
+     hp = 0,
+     price = 1000,
+    },
+
+    {
+        equipmentID = 2,
+        name = "大剑",
+     description = "能够造成巨大伤害的重型武器",
+     part = "Weapon",
+     rarity = "Scarce",
+     attack = 250,
+     hp = 0,
+     price = 2300,
+    },
+
+    {
+        equipmentID = 3,
+        name = "小圆盾",
+     description = "遮挡面积有限，初级防御护盾",
+     part = "Shield",
+     rarity = "Common",
+     attack = 0,
+     hp = 150,
+     price = 1400,
+    },
+
+    {
+        equipmentID = 4,
+        name = "骑士盾",
+     description = "骑士所使用的护盾，能够大幅度减轻所受伤害",
+     part = "Shield",
+     rarity = "Legend",
+     attack = 0,
+     hp = 450,
+     price = 5000,
+    },
+
+    {
+        equipmentID = 5,
+        name = "粗制铠甲",
+     description = "基本的铠甲，比不穿要好",
+     part = "Armor",
+     rarity = "Common",
+     attack = 0,
+     hp = 200,
+     price = 2000,
+    },
+
+    {
+        equipmentID = 6,
+        name = "银色铠甲",
+     description = "防御性能不错的铠甲",
+     part = "Armor",
+     rarity = "Scarce",
+     attack = 0,
+     hp = 400,
+     price = 4000,
+    },
+
+    {
+        equipmentID = 7,
+        name = "士兵头盔",
+     description = "随处可见的士兵所戴的头盔",
+     part = "Helmet",
+     rarity = "Common",
+     attack = 0,
+     hp = 50,
+     price = 1500,
+    },
+
+    {
+        equipmentID = 8,
+        name = "骑士头盔",
+     description = "骑士所戴的头盔",
+     part = "Helmet",
+     rarity = "Legend",
+     attack = 0,
+     hp = 150,
+     price = 3500,
+    },
+
+    {
+        equipmentID = 9,
+        name = "登山鞋",
+     description = "登山用的鞋子，防止脚起泡而设计，战场上的性能不足",
+     part = "Boot",
+     rarity = "Common",
+     attack = 0,
+     hp = 40,
+     price = 1000,
+    },
+
+    {
+        equipmentID = 10,
+        name = "铁皮鞋",
+     description = "外层有铁皮包裹的鞋子，防御性能高",
+     part = "Boot",
+     rarity = "Scarce",
+     attack = 0,
+     hp = 80,
+     price = 1700,
+    },
+}
+
+
+return equipmentsInfo;
