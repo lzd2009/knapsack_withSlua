@@ -1,9 +1,9 @@
 截图：
 获取装备：
-![](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/1.png)
+![1](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/1.png)
 获取详细信息：
-![](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/2.png)
+![2](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/2.png)
 获取物品：
-![](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/3.png)
+![3](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/3.png)
 获取碎片：
-![](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/4.png)
+![4](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/4.png)
