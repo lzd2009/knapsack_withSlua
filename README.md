@@ -1,1 +1,9 @@
-12月份学校事太多了，很少时间写这个，还在继续写中。。。
+截图：
+获取装备：
+![](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/1.png)
+获取详细信息：
+![](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/2.png)
+获取物品：
+![](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/3.png)
+获取碎片：
+![](https://github.com/lzd2009/knapsack_withSlua/raw/master/showImage/4.png)
