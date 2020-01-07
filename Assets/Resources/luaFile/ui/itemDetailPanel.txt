@@ -1,0 +1,26 @@
+local equipmentDetailPanel = require 'luaFile.ui.equipmentDetailPanel';
+local baseDetailPanel = require 'luaFile.ui.baseDetailPanel';
+local itemsInfo = require 'luaFile.infos.itemsInfo';
+local itemDetailPanel = equipmentDetailPanel:New();
+function itemDetailPanel:New()
+    local o = baseDetailPanel:New("ItemDetailPanel");
+    self.__index = self;
+    setmetatable(o,self);
+    o.useBtn = o.panelGo.transform:Find("useBtn"):GetComponent(UI.Button);
+    o.useBtn.onClick:AddListener(function()
+        --todo 数据层面使用，并弹出使用成功面板。关于显示方面相应减少的，打算使用grid监听它维护的数据变动情况的方法来做。
+        print("使用物品成功！！");
+    end)
+    return o;
+end
+
+function itemDetailPanel:Show(id,instnaceID)
+    --先调用基类show方法
+    baseDetailPanel.Show(self);
+    local t = itemsInfo[id];
+    self.nameText.text =t.name;
+    self.descriptionText.text = t.description;
+    self.rarityText.text = t.rarity;
+end
+
+return itemDetailPanel;

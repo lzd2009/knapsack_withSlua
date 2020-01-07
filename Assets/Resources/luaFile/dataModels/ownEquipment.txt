@@ -17,7 +17,6 @@ end
 function ownEquipment:Add(equipmentData)
     local length = commonFuncs:GetTabLength(self);
     self[length] = equipmentData;
-    print("添加数据项成功");
 end
 
 function ownEquipment:GetEquipmentDataByInstanceID(instanceID)

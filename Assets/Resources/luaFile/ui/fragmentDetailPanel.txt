@@ -1,0 +1,26 @@
+local equipmentDetailPanel = require 'luaFile.ui.equipmentDetailPanel';
+local baseDetailPanel = require 'luaFile.ui.baseDetailPanel';
+local fragmentsInfo = require 'luaFile.infos.fragmentsInfo';
+local fragmentDetailPanel = equipmentDetailPanel:New();
+function fragmentDetailPanel:New()
+    local o = baseDetailPanel:New("FragmentDetailPanel");
+    self.__index = self;
+    setmetatable(o,self);
+    o.mergeBtn = o.panelGo.transform:Find("mergeBtn"):GetComponent(UI.Button);
+    o.mergeBtn.onClick:AddListener(function()
+        --todo 数据层面使用，并弹出使用成功面板。关于显示方面相应减少的，打算使用grid监听它维护的数据变动情况的方法来做。
+        print("点击碎片成功！！");
+    end)
+    return o;
+end
+
+function fragmentDetailPanel:Show(id,instnaceID)
+    --先调用基类show方法
+    baseDetailPanel.Show(self);
+    local t = fragmentsInfo[id];
+    self.nameText.text =t.name;
+    self.descriptionText.text = t.description;
+    self.rarityText.text = t.rarity;
+end
+
+return fragmentDetailPanel;

@@ -1,19 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21c0ba72-f655-479a-922a-8c4067e6e10d" name="Default Changelist" comment="" />
+    <list default="true" id="21c0ba72-f655-479a-922a-8c4067e6e10d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.vs/KnapsackSystem_Slua/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../.vs/KnapsackSystem_Slua/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.vs/KnapsackSystem_Slua/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../.vs/KnapsackSystem_Slua/v15/Server/sqlite3/storage.ide" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.vs/KnapsackSystem_Slua/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../.vs/KnapsackSystem_Slua/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.vs/KnapsackSystem_Slua/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../.vs/KnapsackSystem_Slua/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Prefabs/KnapsackPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Prefabs/KnapsackPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/luaFile/dataModels/ownEquipment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/luaFile/dataModels/ownEquipment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/luaFile/dataModels/ownFragment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/luaFile/dataModels/ownFragment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/luaFile/dataModels/ownItem.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/luaFile/dataModels/ownItem.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/luaFile/infos/fragmentsInfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/luaFile/infos/fragmentsInfo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/luaFile/infos/itemsInfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/luaFile/infos/itemsInfo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/luaFile/knapsack.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/luaFile/knapsack.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/luaFile/ui/equipmentDetailPanel.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/luaFile/ui/equipmentDetailPanel.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/luaFile/ui/getSomethingPanel.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/luaFile/ui/getSomethingPanel.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/luaFile/ui/grid.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/luaFile/ui/grid.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/sprites/item/tolleryI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/sprites/item/tolleryII.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/LuaFileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/LuaFileManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KnapsackSystem_Slua.Editor.Plugins.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../KnapsackSystem_Slua.Editor.Plugins.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KnapsackSystem_Slua.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../KnapsackSystem_Slua.Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KnapsackSystem_Slua.Plugins.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../KnapsackSystem_Slua.Plugins.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KnapsackSystem_Slua.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../KnapsackSystem_Slua.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KnapsackSystem_Slua.userprefs" beforeDir="false" afterPath="$PROJECT_DIR$/../KnapsackSystem_Slua.userprefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/CurrentLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/assetDatabase3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/expandedItems" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/08/08e1c6c80de16fb47a1428671d60044d" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/08/08e1c6c80de16fb47a1428671d60044d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/08/08e1c6c80de16fb47a1428671d60044d.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/08/08e1c6c80de16fb47a1428671d60044d.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/1a/1a36e3f776a4cd540bb5a457cf1e8b3c" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/1a/1a36e3f776a4cd540bb5a457cf1e8b3c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/1d/1daa61c24ce9d9547a9df5e402a24ba1" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/1d/1daa61c24ce9d9547a9df5e402a24ba1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/1d/1daa61c24ce9d9547a9df5e402a24ba1.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/1d/1daa61c24ce9d9547a9df5e402a24ba1.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/22/226c09e1fafd3994386f339ac50058bc" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/22/226c09e1fafd3994386f339ac50058bc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/22/226c09e1fafd3994386f339ac50058bc.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/22/226c09e1fafd3994386f339ac50058bc.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/2e/2e51713a2b8a7c548affef58822b24b8" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/2e/2e51713a2b8a7c548affef58822b24b8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/2e/2e51713a2b8a7c548affef58822b24b8.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/2e/2e51713a2b8a7c548affef58822b24b8.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/5b/5befd12107a2dab4c863f3458a672702" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/5b/5befd12107a2dab4c863f3458a672702" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/97/9797ca0883216ab4cacc43a2fba76acd" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/97/9797ca0883216ab4cacc43a2fba76acd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/97/9797ca0883216ab4cacc43a2fba76acd.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/97/9797ca0883216ab4cacc43a2fba76acd.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/c6/c68b9edf62857354ba7aa9b71754dd81" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/c6/c68b9edf62857354ba7aa9b71754dd81" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/d7/d75695691a4ff4642a5f8fd14b172b6b" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/d7/d75695691a4ff4642a5f8fd14b172b6b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/e2/e28c51976aab57c4eabaa10a5f38c987" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/e2/e28c51976aab57c4eabaa10a5f38c987" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/e6/e60a5c02b14908145995c0af31ebc2ce" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/e6/e60a5c02b14908145995c0af31ebc2ce" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/fd/fd7e4e2b025d11548b08f504fac8c78d" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/fd/fd7e4e2b025d11548b08f504fac8c78d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Library/metadata/fd/fd7e4e2b025d11548b08f504fac8c78d.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/fd/fd7e4e2b025d11548b08f504fac8c78d.info" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1Vq2Ed2AUM3iE8X1GTjual6DcVZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Resources/luaFile/dataModels/ownEquipment.txt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Resources/luaFile/knapsack.txt" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -40,10 +91,27 @@
       <workItem from="1577966194989" duration="8101000" />
       <workItem from="1577977024183" duration="5554000" />
       <workItem from="1578015581037" duration="25736000" />
+      <workItem from="1578050093034" duration="4880000" />
+      <workItem from="1578127913682" duration="8536000" />
+      <workItem from="1578381720771" duration="17150000" />
+      <workItem from="1578412360674" duration="1083000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

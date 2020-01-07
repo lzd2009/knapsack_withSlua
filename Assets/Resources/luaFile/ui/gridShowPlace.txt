@@ -1,0 +1,60 @@
+local commonFuncs= require 'luaFile.commonFuncs.commonFuncs';
+local gridShowPlace = {}
+function gridShowPlace:New()
+    local o = {}
+    self.__index = self;
+    setmetatable(o,self);
+    return o;
+end
+
+gridShowPlace.ownGridList = {};
+
+
+--将grid的实例table添加进列表管理
+function gridShowPlace:AddGridToList(gridInstance)
+    local index,targetGrid = self:TryGetOwnGrid(gridInstance.gridType,gridInstance.id,gridInstance.instanceID);
+    if( targetGrid == nil)then
+        local length = commonFuncs:GetTabLength(self.ownGridList);
+        self.ownGridList[length] = gridInstance;
+    else
+        print("cant find gridInstance From gridShowPlace.")
+    end
+end
+
+--移除
+function gridShowPlace:RemoveGridFromList(gridInstance)
+    local index , target = self:TryGetOwnGrid(gridInstance.gridType,gridInstance.id,gridInstance.instanceID);
+    self[index] = nil;
+end
+
+--获得特定grid表
+function gridShowPlace:TryGetOwnGrid(gridType,id,instanceID)
+    local index = nil;
+    local targetGrid = nil;
+    for k,v in pairs(self.ownGridList)do
+        if((v.gridType == gridType ) and (v.id == id) and (v.instanceID == instanceID))then
+            index = k;
+            targetGrid = v;
+            break;
+        end
+    end
+    return index,targetGrid;
+end
+gridShowPlace.lastSeletedKind = 1;
+--只显示某一种grid
+function gridShowPlace:ShowOneKindOfGrid(gridType)
+    self.lastSeletedKind = gridType;
+    for k,v in pairs(self.ownGridList) do
+        if(v.gridType == gridType)then
+            v.gridGoInstance:SetActive(true);
+        else
+            v.gridGoInstance:SetActive(false);
+        end
+    end
+end
+
+function gridShowPlace:ShowCurrentKindOfGrid()
+    self:ShowOneKindOfGrid(self.lastSeletedKind);
+end
+
+return gridShowPlace;

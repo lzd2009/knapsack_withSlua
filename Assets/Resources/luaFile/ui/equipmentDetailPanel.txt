@@ -1,35 +1,31 @@
 local equipmentsInfo = require 'luaFile.infos.equipmentsInfo';
-
-local equipmentDetailPanel = {}
+local baseDetailPanel = require 'luaFile.ui.baseDetailPanel';
+local ownEquipment = require 'luaFile.dataModels.ownEquipment';
+--equipmentDetailPanel继承基类baseDetailPanel
+local equipmentDetailPanel = baseDetailPanel:New("EquipmentDetailPanel");
 
 function equipmentDetailPanel:New()
-    local o = {};
+    local o = baseDetailPanel:New("EquipmentDetailPanel");
     self.__index = self;
     setmetatable(o,self);
-    o.parent =  GameObject.Find("Canvas").transform;
-    o.equipmentDetailPanelGo =GameObject.Instantiate(Resources.Load("Prefabs/EquipmentDetailPanel"), o.parent);
-    o.nameText = o.equipmentDetailPanelGo.transform:Find("name"):GetComponent(UI.Text);
-    o.descriptionText = o.equipmentDetailPanelGo.transform:Find("description"):GetComponent(UI.Text);
-    o.typeText = o.equipmentDetailPanelGo.transform:Find("type"):GetComponent(UI.Text);
-    o.rarityText = o.equipmentDetailPanelGo.transform:Find("rarity"):GetComponent(UI.Text);
-    o.priceText = o.equipmentDetailPanelGo.transform:Find("price"):GetComponent(UI.Text);
-    o.addHpGo = o.equipmentDetailPanelGo.transform:Find("addHp").gameObject;
-    o.addAttqackGo = o.equipmentDetailPanelGo.transform:Find("addAttqack").gameObject;
-    o.addCountText =  o.equipmentDetailPanelGo.transform:Find("addCount"):GetComponent(UI.Text);
-    o.sellBtn = o.equipmentDetailPanelGo.transform:Find("sellBtn"):GetComponent(UI.Button);
-    o. equipBtn = o.equipmentDetailPanelGo.transform:Find("equipBtn"):GetComponent(UI.Button);
-    o.closeBtn = o.equipmentDetailPanelGo.transform:Find("closeBtn"):GetComponent(UI.Button);
-    o.equipmentDetailPanelGo:SetActive(false);
+    o.typeText = o.panelGo.transform:Find("type"):GetComponent(UI.Text);
+    o.priceText = o.panelGo.transform:Find("price"):GetComponent(UI.Text);
+    o.addHpGo = o.panelGo.transform:Find("addHp").gameObject;
+    o.addAttqackGo = o.panelGo.transform:Find("addAttqack").gameObject;
+    o.addCountText =  o.panelGo.transform:Find("addCount"):GetComponent(UI.Text);
+    o.sellBtn = o.panelGo.transform:Find("sellBtn"):GetComponent(UI.Button);
+    o. equipBtn = o.panelGo.transform:Find("equipBtn"):GetComponent(UI.Button);
+    o.panelGo:SetActive(false);
     return o;
 end
 
-function equipmentDetailPanel:Show(ShowEquipmentData)
-    self.equipmentDetailPanelGo:SetActive(true);
-    self.equipmentDetailPanelGo.transform:SetAsLastSibling();
-    self.currentShowEquipmentData = ShowEquipmentData;
 
-    local t = equipmentsInfo[ShowEquipmentData.equipmentID];
+function equipmentDetailPanel:Show(id,instnaceID)
+    --先调用基类show方法
+    baseDetailPanel.Show(self);
 
+    local tab = ownEquipment:GetEquipmentDataByInstanceID(instnaceID);
+    local t = equipmentsInfo[tab.equipmentID];
     self.nameText.text =t.name;
     self.descriptionText.text = t.description;
     self.typeText.text = t.part;
@@ -49,9 +45,6 @@ function equipmentDetailPanel:Show(ShowEquipmentData)
     end)
     self.equipBtn.onClick:AddListener(function()
 
-    end)
-    self.closeBtn.onClick:AddListener(function()
-        self.equipmentDetailPanelGo:SetActive(false);
     end)
 end
 

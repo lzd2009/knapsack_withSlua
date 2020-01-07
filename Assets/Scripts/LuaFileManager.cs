@@ -4,6 +4,7 @@ using UnityEngine;
 using SLua;
 using System;
 using UnityEngine.UI;
+
 [CustomLuaClass]
 public class LuaFileManager : MonoBehaviour {
 
@@ -17,11 +18,14 @@ public class LuaFileManager : MonoBehaviour {
     public LifeFunctionDelegate d_update;
     public LifeFunctionDelegate d_onEnable;
     public LifeFunctionDelegate d_onDisable;
-    
+
     public void TestArea()
     {
 
+        
     }
+
+
 
 	// Use this for initialization
 	void Start () {

@@ -1,13 +1,21 @@
 local ownEquipment = require 'luaFile.dataModels.ownEquipment';
 local equipmentDetailPanel = require 'luaFile.ui.equipmentDetailPanel';
 local equipmentsInfo = require 'luaFile.infos.equipmentsInfo';
-
-local grid = {gridGoPrefab = nil,gridGoInstance = nil,parent = nil,gridBtn = nil,image = nil,count_item = nil,count_fragment = nil}
-    function grid:New(parent)
+local itemDetailPanel = require 'luaFile.ui.itemDetailPanel';
+local fragmentDetailPanel = require 'luaFile.ui.fragmentDetailPanel';
+local itemsInfo = require 'luaFile.infos.itemsInfo';
+local fragmentsInfo = require 'luaFile.infos.fragmentsInfo';
+local ownItem = require 'luaFile.dataModels.ownItem';
+local ownFragment = require 'luaFile.dataModels.ownFragment'
+local grid = {}
+    function grid:New(parent,gridType,id,instanceID)
         local o =  {};
         self.__index = self;
         setmetatable(o,self);
         o.parent = parent;
+        o.gridType = gridType;
+        o.id = id;
+        o.instanceID = instanceID;
         o.gridGoPrefab = Resources.Load("Prefabs/grid");
         o.gridGoInstance = GameObject.Instantiate(o.gridGoPrefab,parent);
         o.gridBtn = o.gridGoInstance.transform:Find("bg"):GetComponent(UI.Button);
@@ -17,12 +25,14 @@ local grid = {gridGoPrefab = nil,gridGoInstance = nil,parent = nil,gridBtn = nil
         o.image = o.gridGoInstance.transform:Find("image"):GetComponent(UI.Image);
         o.count_item = o.gridGoInstance.transform:Find("count_item"):GetComponent(UI.Text);
         o.count_fragment = o.gridGoInstance.transform:Find("count_fragment"):GetComponent(UI.Text);
+        o.count_fragment_TotalNeed = o.count_fragment.transform:Find("count_fragment_TotalNeed"):GetComponent(UI.Text);
         return o;
     end
 
-    function grid:Show(gridType,id,instanceID)
-        if(gridType == 1)then
-            local equipmentData = ownEquipment:GetEquipmentDataByInstanceID(instanceID);
+--可选参数，显示得到了多少个而不是显示拥有数量
+    function grid:Show(getCount)
+        if(self.gridType == 1)then
+            local equipmentData = ownEquipment:GetEquipmentDataByInstanceID(self.instanceID);
             local sprite = LuaFileManager.LoadSprite("sprites/equipment/"..equipmentData.equipmentID);
             self.image.sprite =sprite;
             self:SwitchGridColorByRarity(self.gridBtn:GetComponent(UI.Image), equipmentsInfo[equipmentData.equipmentID]["rarity"]);
@@ -32,12 +42,51 @@ local grid = {gridGoPrefab = nil,gridGoInstance = nil,parent = nil,gridBtn = nil
                 if(equipmentDetailPanelInstance == nil)then
                    equipmentDetailPanelInstance = equipmentDetailPanel:New();
                 end
-                equipmentDetailPanelInstance:Show(equipmentData);
+                equipmentDetailPanelInstance:Show(self.id,self.instanceID);
             end)
-        elseif (gridType == 2) then
+        elseif (self.gridType == 2) then
+            local infoTab = itemsInfo[self.id];
+            local sprite = LuaFileManager.LoadSprite("sprites/item/"..infoTab.property);
+            self.image.sprite =sprite;
+            self:SwitchGridColorByRarity(self.gridBtn:GetComponent(UI.Image), infoTab["rarity"]);
+            self.count_item.gameObject:SetActive(true);
+            local ownTab = ownItem:TryGet(self.id);
+            if(getCount == nil)then
+                self.count_item.text = ownTab.count;
+            else
+                self.count_item.text = getCount;
+            end
+            self.count_fragment.gameObject:SetActive(false);
+            self.gridBtn.onClick:AddListener(function ()
+                if(itemDetailPanelInstance == nil)then
+                    itemDetailPanelInstance = itemDetailPanel:New();
+                end
+                itemDetailPanelInstance:Show(self.id,self.instanceID);
+            end)
+        elseif (self.gridType == 3) then
+            local infoTab = fragmentsInfo[self.id];
+            local sprite = LuaFileManager.LoadSprite("sprites/fragment/"..infoTab.character);
+            self.image.sprite =sprite;
+            self:SwitchGridColorByRarity(self.gridBtn:GetComponent(UI.Image), infoTab["rarity"]);
 
-        elseif (gridType == 3) then
 
+            local ownTab = ownFragment:TryGet(self.id);
+            if(getCount ~= nil)then
+                self.count_item.gameObject:SetActive(true);
+                self.count_fragment.gameObject:SetActive(false);
+                self.count_item.text = getCount;
+            else
+                self.count_item.gameObject:SetActive(false);
+                self.count_fragment.gameObject:SetActive(true);
+                self.count_fragment.text = ownTab.count;
+                self.count_fragment_TotalNeed.text = fragmentsInfo[ownTab.id].count;
+            end
+            self.gridBtn.onClick:AddListener(function ()
+                if(fragmentDetailPanelInstance == nil)then
+                    fragmentDetailPanelInstance = fragmentDetailPanel:New();
+                end
+                fragmentDetailPanelInstance:Show(self.id,self.instanceID);
+            end)
         end
     end
 

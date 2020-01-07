@@ -1,26 +1,38 @@
 local fragmentsInfo = {
-    {name = "角色A-碎片",
+    {
+        id = 1,
+        name = "角色A-碎片",
      description = "解锁角色A所需要的碎片",
      rarity = "Common",
      count = 10,
+        character = "A",
     },
 
-    {name = "角色B-碎片",
+    {
+        id = 2,
+        name = "角色B-碎片",
      description = "解锁角色B所需要的碎片",
      rarity = "Common",
      count = 10,
+        character = "B",
     },
 
-    {name = "角色C-碎片",
+    {
+        id = 3,
+        name = "角色C-碎片",
      description = "解锁角色C所需要的碎片",
      rarity = "Scarce",
      count = 20,
+        character = "C",
     },
 
-    {name = "角色D-碎片",
+    {
+        id = 4,
+        name = "角色D-碎片",
      description = "解锁角色D所需要的碎片",
      rarity = "Legend",
      count = 30,
+        character = "D",
     },
 
 }

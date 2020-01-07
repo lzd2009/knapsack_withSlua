@@ -319,9 +319,13 @@
     <None Include="Assets\Resources\luaFile\infos\fragmentsInfo.txt" />
     <None Include="Assets\Resources\luaFile\infos\itemsInfo.txt" />
     <None Include="Assets\Resources\luaFile\knapsack.txt" />
+    <None Include="Assets\Resources\luaFile\ui\baseDetailPanel.txt" />
     <None Include="Assets\Resources\luaFile\ui\equipmentDetailPanel.txt" />
+    <None Include="Assets\Resources\luaFile\ui\fragmentDetailPanel.txt" />
     <None Include="Assets\Resources\luaFile\ui\getSomethingPanel.txt" />
     <None Include="Assets\Resources\luaFile\ui\grid.txt" />
+    <None Include="Assets\Resources\luaFile\ui\gridShowPlace.txt" />
+    <None Include="Assets\Resources\luaFile\ui\itemDetailPanel.txt" />
     <None Include="Assets\Slua\Resources\circle\circle.txt" />
     <None Include="Assets\Slua\Resources\custom.txt" />
     <None Include="Assets\Slua\Resources\delegate.txt" />

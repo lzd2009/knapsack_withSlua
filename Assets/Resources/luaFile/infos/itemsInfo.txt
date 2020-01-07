@@ -1,27 +1,35 @@
 
 local itemsInfo = {
-    {name = "金币袋-小",
+    {
+        id = 1,
+        name = "金币袋-小",
      description = "打开后获得少量金币",
      rarity = "Common",
-     property = "addCoin_1000"
+     property = "coin1000"
     },
 
-    {name = "金币袋-大",
+    {
+        id = 2,
+        name = "金币袋-大",
      description = "打开后获得大量金币",
      rarity = "Scarce",
-     property = "addCoin_5000",
+     property = "coin5000",
     },
 
-    {name = "抽奖票I型",
+    {
+        id = 3,
+        name = "抽奖票I型",
      description = "用于在卡池I中抽奖",
      rarity = "Legend",
-     property = "lottery_1",
+     property = "lotteryI",
     },
 
-    {name = "抽奖票II型",
+    {
+        id = 4,
+        name = "抽奖票II型",
      description = "用于在卡池II中抽奖",
      rarity = "Legend",
-     property = "lottery_2",
+     property = "lotteryII",
     },
 }
 

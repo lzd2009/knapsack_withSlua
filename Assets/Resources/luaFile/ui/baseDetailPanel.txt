@@ -1,0 +1,35 @@
+local equipmentsInfo = require 'luaFile.infos.equipmentsInfo';
+local ownEquipment = require 'luaFile.dataModels.ownEquipment';
+--这个类是equipmentDetailPanel、itemDetailPanel、fragmentDetailPanel的基类。
+
+
+local baseDetailPanel = {}
+
+baseDetailPanel.i = 10;
+function baseDetailPanel:New(panelGoName)
+
+    local o = {};
+    self.__index = self;
+    setmetatable(o,self);
+    o.parent =  GameObject.Find("Canvas").transform;
+    o.panelGo =GameObject.Instantiate(Resources.Load("Prefabs/"..panelGoName), o.parent);
+    o.nameText = o.panelGo.transform:Find("name"):GetComponent(UI.Text);
+    o.descriptionText = o.panelGo.transform:Find("description"):GetComponent(UI.Text);
+    o.rarityText = o.panelGo.transform:Find("rarity"):GetComponent(UI.Text);
+    o.closeBtn = o.panelGo.transform:Find("closeBtn"):GetComponent(UI.Button);
+    o.closeBtn.onClick:AddListener(function ()
+        o.panelGo:SetActive(false);
+    end)
+
+    return o;
+end
+
+
+function baseDetailPanel:Show()
+    self.panelGo:SetActive(true);
+    self.panelGo.transform:SetAsLastSibling();
+    --todo set position.
+end
+
+
+return baseDetailPanel;

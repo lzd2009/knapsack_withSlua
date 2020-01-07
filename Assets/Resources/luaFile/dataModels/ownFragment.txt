@@ -1,2 +1,38 @@
-function main()
+local commonFuncs= require 'luaFile.commonFuncs.commonFuncs';
+
+local ownFragment = {}
+--为指定id添加count个。
+ownFragment.ownListFragment = {}
+function ownFragment:Add(id,count)
+    local tab = self:TryGet(id);
+    if(tab ~= nil)then
+        tab.count = tab.count + count;
+    else
+        local length = commonFuncs:GetTabLength(self.ownListFragment);
+        self.ownListFragment[length] = {id = id,count = count};
+    end
 end
+
+function ownFragment:Remove(id,count)
+    local tab = self:TryGet(id);
+    if(tab ~= nil)then
+        tab.count = tab.count - count;
+        if(tab.count < 0)then
+            print("检查错误，未校验扣除值");
+        end
+    else
+        print("请检查错误");
+    end
+end
+
+function ownFragment:TryGet(id)
+    local tab = nil;
+    for k,v in pairs(self.ownListFragment) do
+        if(v.id == id)then
+            tab = v;
+            break;
+        end
+    end
+    return tab;
+end
+return ownFragment;

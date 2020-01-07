@@ -1,3 +1,38 @@
-local ownItem = {}
+local commonFuncs= require 'luaFile.commonFuncs.commonFuncs';
 
+local ownItem = {}
+--为指定id添加count个。
+ownItem.ownListItem = {}
+function ownItem:Add(id,count)
+    local tab = self:TryGet(id);
+    if(tab ~= nil)then
+        tab.count = tab.count + count;
+    else
+        local length = commonFuncs:GetTabLength(self.ownListItem);
+        self.ownListItem[length] = {id = id,count = count};
+    end
+end
+
+function ownItem:Remove(id,count)
+    local tab = self:TryGet(id);
+    if(tab ~= nil)then
+        tab.count = tab.count - count;
+        if(tab.count < 0)then
+            print("检查错误，未校验扣除值");
+        end
+    else
+        print("请检查错误");
+    end
+    end
+
+function ownItem:TryGet(id)
+    local tab = nil;
+    for k,v in pairs(self.ownListItem) do
+        if(v.id == id)then
+            tab = v;
+            break;
+        end
+    end
+    return tab;
+end
 return ownItem;
